@@ -68,30 +68,34 @@ username: admin
 password: admin
 ```
 
-
 To set up the environment, select 'User Config'
 
 Add a user as follows:
 
+```
 Username: developer
 Password: developer
 Role: Role_User
 **Make sure to click the check box for 'Is a node'**
 Click 'Create User'
+```
 
 Now select Depositors from the admin menu, then click Add Depositor.
 
+```
 Organization Name: development
 Organization Address: development
 Namespace: development
 **Select the user 'developer' we just created in the Replicating Nodes box so that it is highlighted.**
 Click on 'Add Depositor'
+```
 
-Make sure you click on the word 'developer' in the replicating nodes box before you select Add Depositor.
+**Make sure you click on the word 'developer' in the replicating nodes box before you select Add Depositor.**
 
 Now select Storage Region Create and create two storage regions:
 
 The first should have these values:
+```
 Owning Node: developer
 Data Type: BAG
 Storage Type: LOCAL
@@ -100,15 +104,18 @@ Storage Unity: GB
 Replication Server: chron-ingest
 Replication Path: /bags
 Replication Username: chronopolis
+```
 
 The second should have these values:
+```
 Owning Node: developer
 Data Type: TOKEN
-Storage Type: LOVAL
+Storage Type: LOCAL
 Storage Unit: GB
 Replication Server: chron-ingest
 Replication Path: /tokens
 Replication Username: chronopolis
+```
 
 You now have a basic environment to test in.
 
