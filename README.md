@@ -13,13 +13,17 @@ The ACE components used in this build are available and documented here:
 
 Since the chronopolis system has a large number of dependencies, this process was designed to allow developers to easily edit and modify the source code on their local disk using local tools, then shut down the chronopolis system, recompile the code, and bring it all back up with state still intact.
 
-First we grab the source from gitlab...
+First we grab the chronopolis-core source from gitlab...
 ```jsx
 git clone [https://gitlab.com/chronopolis/chronopolis-core.git](https://gitlab.com/chronopolis/chronopolis-core.git)
 ```
+...then we get the chronopolis-docker-compose source...
+`git clone https://gitlab.com/chronopolis/chronopolis-docker-compose.git`
+...copy the chronopolis-docker-compose directory into the chronopolis-core directory...
+`cp chronopolis-docker-compose chronopolis-core`
 ...then build the docker images we need and start up the build environment...
 ```jsx
-cd chronopolis-core/docker-compose/build
+cd chronopolis-core/chronopolis-docker-compose/build
 ./buildimages.sh
 ./buildup.sh
 ```
