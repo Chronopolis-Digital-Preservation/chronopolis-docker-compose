@@ -63,8 +63,11 @@ The configuration and mysql data for ACE is stored in a persistent volume associ
 
 The ingest server webUI is at: [http://localhost:8070/](http://localhost:8070/)
 
+```
 username: admin
 password: admin
+```
+
 
 To set up the environment, select 'User Config'
 
