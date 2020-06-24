@@ -23,7 +23,7 @@ git clone https://gitlab.com/chronopolis/chronopolis-docker-compose.git
 ```
 ...copy the chronopolis-docker-compose directory into the chronopolis-core directory...
 ```
-cp chronopolis-docker-compose chronopolis-core
+mv chronopolis-docker-compose chronopolis-core
 ```
 ...then build the docker images we need and start up the build environment...
 ```jsx
