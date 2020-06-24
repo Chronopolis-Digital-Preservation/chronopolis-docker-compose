@@ -55,7 +55,7 @@ The first build can be quite long, since it downloads source from external repos
 
 The build environment includes a pgadmin container that you can use to examine the postgresql db running on the postgresql container.
 
-Your infrastructure is now up and running.
+Your infrastructure should be up and running about 2 minutes after the chronup.sh is run.
 
 # Setting up a test environment
 
