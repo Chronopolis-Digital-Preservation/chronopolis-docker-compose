@@ -2,6 +2,11 @@ FROM centos:7
 
 RUN adduser chronopolis
 
+RUN mkdir -p /export/outgoing/bags
+RUN chown -R chronopolis:chronopolis /export/outgoing/bags
+RUN mkdir -p /export/outgoing/tokens
+RUN chown -R chronopolis:chronopolis /export/outgoing/tokens
+
 RUN yum -y install java-1.8.0-openjdk-devel
 
 # We are going to need Maven

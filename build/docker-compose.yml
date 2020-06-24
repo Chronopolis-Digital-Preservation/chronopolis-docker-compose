@@ -14,6 +14,7 @@ services:
     volumes:
       - "../..:/chronopolis-core"
       - "../chronopolishome:/home/chronopolis"
+      - "../export:/export"
 
   postgresql:
     image: 'postgres:12.2'

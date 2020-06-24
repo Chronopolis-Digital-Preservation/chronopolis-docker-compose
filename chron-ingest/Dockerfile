@@ -7,11 +7,6 @@ RUN chown chronopolis:chronopolis /var/log/chronopolis
 
 COPY files/ssh/ /etc/ssh/
 
-RUN mkdir -p /export/outgoing/bags
-RUN chown -R chronopolis:chronopolis /export/outgoing/bags
-RUN mkdir -p /export/outgoing/tokens
-RUN chown -R chronopolis:chronopolis /export/outgoing/tokens
-
 RUN chmod 777 /var/run
 
 # RUN yum -y update
