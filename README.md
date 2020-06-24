@@ -28,6 +28,7 @@ mv chronopolis-docker-compose chronopolis-core
 ...then build the docker images we need and start up the build environment...
 ```jsx
 cd chronopolis-core/chronopolis-docker-compose/build
+./buildimages.sh
 ./buildup.sh
 ```
 ...we ssh into the build container and compile the source code...this can take a while the first time...
