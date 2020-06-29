@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --rm -t local/chron-replication .
+docker build --network host --rm -t local/chron-replication .
