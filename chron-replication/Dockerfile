@@ -13,7 +13,7 @@ RUN yum -y install java-1.8.0-openjdk-devel
 # We are going to need Maven
 RUN yum -y install maven
 
-RUN yum -y install openssh-clients
+RUN yum -y install openssh-server openssh-clients
 
 # We also need rsync
 RUN yum -y install rsync

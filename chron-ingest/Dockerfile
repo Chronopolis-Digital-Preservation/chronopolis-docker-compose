@@ -5,8 +5,6 @@ RUN adduser chronopolis
 RUN mkdir /var/log/chronopolis
 RUN chown chronopolis:chronopolis /var/log/chronopolis
 
-COPY files/ssh/ /etc/ssh/
-
 RUN chmod 777 /var/run
 
 # RUN yum -y update
@@ -17,14 +15,12 @@ RUN yum -y install maven
 
 # We need ssh for rsync to connect to...
 RUN yum -y install openssh-server passwd openssh-clients
+COPY files/ssh/ /etc/ssh/
 RUN mkdir /var/run/sshd
 
 # We also need rsync
 RUN yum -y install rsync
 RUN yum -y install perl
-
-# And psql for luck...
-# RUN yum -y install postgresql
 
 EXPOSE 8080
 EXPOSE 8009
