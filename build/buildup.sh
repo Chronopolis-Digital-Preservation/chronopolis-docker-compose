@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "############################################ Bringing up build environment."
-docker-compose --project-name chronopolis-build up -d
+docker-compose --project-name chronopolis up -d
 echo "############################################ Build environment running."

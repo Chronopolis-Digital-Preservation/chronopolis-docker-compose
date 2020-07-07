@@ -1,2 +1,2 @@
 #/bin/bash
-docker-compose --project-name chronopolis-build down
+docker-compose --project-name chronopolis down
