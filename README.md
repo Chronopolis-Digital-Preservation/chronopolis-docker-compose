@@ -29,7 +29,7 @@ cd chronopolis-core/chronopolis-docker-compose/build
 sudo ./buildimages.sh
 sudo ./buildup.sh
 ```
-...we ssh into the build container and compile the source code. The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that directory and you can recompile...
+...we ssh into the build container and compile the source code. The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/chronopolis-docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that .m2 directory...
 ```jsx
 sudo ./buildssh.sh
 su - chronopolis
