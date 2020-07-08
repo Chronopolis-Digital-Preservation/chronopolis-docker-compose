@@ -16,6 +16,9 @@ RUN yum -y install maven
 # We need ssh for rsync to connect to...
 RUN yum -y install openssh-server passwd openssh-clients
 COPY files/ssh/ /etc/ssh/
+RUN chmod 755 /etc/ssh
+RUN chmod 744 /etc/ssh/*
+RUN chmod 700 /etc/ssh/ssh_host_rsa_key
 RUN mkdir /var/run/sshd
 
 # We also need rsync
