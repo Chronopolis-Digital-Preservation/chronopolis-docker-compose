@@ -2,6 +2,7 @@
 chown -R chronopolis:chronopolis /scratch1
 chown -R chronopolis:chronopolis /export
 chown -R chronopolis:chronopolis /home/chronopolis
+chmod 750 /home/chronopolis
 chmod -R 755 /home/chronopolis/.ssh
 chmod 740 /home/chronopolis/.ssh/*
 chmod 700 /home/chronopolis/.ssh/id_rsa
