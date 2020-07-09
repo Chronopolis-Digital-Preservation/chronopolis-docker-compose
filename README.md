@@ -29,7 +29,7 @@ cd chronopolis-core/chronopolis-docker-compose/build
 sudo ./buildimages.sh
 sudo ./buildup.sh
 ```
-...we ssh into the build container and compile the source code...this can take a while the first time...
+...we ssh into the build container and compile the source code. The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/chronopolis-docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that .m2 directory...
 ```jsx
 sudo ./buildssh.sh
 su - chronopolis
@@ -49,8 +49,6 @@ sudo ./builddown.sh
 cd ..
 sudo ./chronup.sh
 ```
-The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that directory and you can recompile.
-
 The build environment includes a pgadmin container that you can use to examine the postgresql db running on the postgresql container.
 
 Your infrastructure should be up and running about 2 minutes after the chronup.sh is run.
