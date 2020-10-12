@@ -10,30 +10,32 @@ The ACE components used in this build are available and documented here:
 
 Since the chronopolis system has a large number of dependencies, this process was designed to allow developers to easily edit and modify the source code on their local disk using local tools, then shut down the chronopolis system, recompile the code, and bring it all back up with state still intact.
 
-First we grab the chronopolis-core source from gitlab...
+First we grab the chronopolis-core source from gitlab.
 ```jsx
 git clone [https://gitlab.com/chronopolis/chronopolis-core.git](https://gitlab.com/chronopolis/chronopolis-core.git)
 ```
-...then we get the chronopolis-docker-compose source...
+Then we get the chronopolis-docker-compose source.
 ```
 git clone https://gitlab.com/chronopolis/chronopolis-docker-compose.git
 ```
-...copy the chronopolis-docker-compose directory into the chronopolis-core directory...
+Now, we copy the chronopolis-docker-compose directory into the chronopolis-core directory.
 ```
 mv chronopolis-docker-compose chronopolis-core
 ```
-The build scripts are meant to work with bash, so if you are on a Mac, or aren't sure...run that shell...
+The build scripts are meant to work with bash, so if you are on a Mac ( which is now zsh ), or aren't sure, run the shell with this command.
 ```
 bash
 ```
-...then build the docker images we need and start up the build environment...
+Then build the docker images we need and start up the build environment.
 ```jsx
 cd chronopolis-core/chronopolis-docker-compose/build
 ./buildenv.sh
 sudo ./buildimages.sh
 sudo ./buildup.sh
 ```
-...we ssh into the build container and compile the source code. The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/chronopolis-docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that .m2 directory...
+We ssh into the build container and compile the source code. The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/chronopolis-docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that .m2 directory.
+
+The build environment includes a pgadmin container that you can use to examine the postgresql db running on the postgresql container.  The URL is http://localhost:8060.  The username is chronopolis@localhost.localdomain and the password is 'password'.  I know, I know.  Once on the pgadmin interface, you can add a server pointing to host 'postgresql' with user 'postgres' and password...yes...you guessed it...'password'.
 ```jsx
 sudo ./buildssh.sh
 su - chronopolis
@@ -53,7 +55,6 @@ sudo ./builddown.sh
 cd ..
 sudo ./chronup.sh
 ```
-The build environment includes a pgadmin container that you can use to examine the postgresql db running on the postgresql container.
 
 Your infrastructure should be up and running about 2 minutes after the chronup.sh is run.
 
