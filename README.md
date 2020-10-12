@@ -22,6 +22,10 @@ git clone https://gitlab.com/chronopolis/chronopolis-docker-compose.git
 ```
 mv chronopolis-docker-compose chronopolis-core
 ```
+The build scripts are meant to work with bash, so...
+```
+bash
+```
 ...then build the docker images we need and start up the build environment...
 ```jsx
 cd chronopolis-core/chronopolis-docker-compose/build
