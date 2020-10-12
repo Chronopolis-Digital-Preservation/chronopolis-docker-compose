@@ -22,7 +22,7 @@ git clone https://gitlab.com/chronopolis/chronopolis-docker-compose.git
 ```
 mv chronopolis-docker-compose chronopolis-core
 ```
-The build scripts are meant to work with bash, so...
+The build scripts are meant to work with bash, so if you are on a Mac, or aren't sure...run that shell...
 ```
 bash
 ```
