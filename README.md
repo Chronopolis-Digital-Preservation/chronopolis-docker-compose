@@ -75,7 +75,7 @@ The configuration and mysql data for ACE is stored in a persistent volume associ
 
 ## Chronopolis
 
-The ingest server webUI is at: [http://localhost:8070/](http://localhost:8070/)
+The ingest server webUI is at: [http://localhost:8070/](http://localhost:8070/)  The login button is at the top right.
 
 ```
 username: admin
