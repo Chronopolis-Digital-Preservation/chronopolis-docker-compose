@@ -33,21 +33,21 @@ cd chronopolis-core/chronopolis-docker-compose/build
 sudo ./buildimages.sh
 sudo ./buildup.sh
 ```
-We ssh into the build container and compile the source code. The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/chronopolis-docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that .m2 directory.
-
-The build environment includes a pgadmin container that you can use to examine the postgresql db running on the postgresql container.  The URL is http://localhost:8060.  The username is chronopolis@localhost.localdomain and the password is 'password'.  I know, I know.  Once on the pgadmin interface, you can add a server pointing to host 'postgresql' with user 'postgres' and password...yes...you guessed it...'password'.
+Ssh into the build container and compile the source code. The first build can be quite long, since it downloads source from external repositories and uses them in compiling the rest of chronopolis.  The system stores these external resources going forward and subsequent compiles are MUCH faster.  This relies on Maven caching things in the chronopolis-core/chronopolis-docker-compose/chronopolishome/.m2 directory.  If for some reason you need to download/refresh/empty that cache, just delete everything in that .m2 directory.
 ```
 sudo ./buildssh.sh
 su - chronopolis
 cd /chronopolis-core
 ./mvnw clean install
 ```
-...we initialize the postgresql db with the tables we will need...
+Once all that compiling is done and the build test have passed, initialize the postgresql db with the tables we will need...
 ```
 cd ingest-rest
 ../mvnw -Dflyway.user=postgres -Dflyway.password=password -Dflyway.url=jdbc:postgresql://postgresql:5432/ingestdb flyway:migrate
 ```
-...and finally, we exit out of the build environment, shut it down, and then bring up chronpolis.
+The build environment includes a pgadmin container that you can use to examine the postgresql db running on the postgresql container.  The URL is http://localhost:8060.  The username is chronopolis@localhost.localdomain and the password is 'password'.  I know, I know.  Once on the pgadmin interface, you can add a server pointing to host 'postgresql' with user 'postgres' and password...yes...you guessed it...'password'.
+
+Finally, we exit out of the build environment, shut it down, and then bring up chronopolis.
 ```
 exit
 exit
