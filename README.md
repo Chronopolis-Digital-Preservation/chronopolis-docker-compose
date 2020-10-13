@@ -62,7 +62,7 @@ Your infrastructure should be up and running about 2 minutes after the chronup.s
 
 ## Ace
 
-First, we go to the ACE audit manager interface ( [http://localhost:8090/ace-am](http://localhost:8090/ace-am)  ).  Once there, click on the status link at the top and it will ask you to log in ( username:admin password:admin ).  A link called 'System Settings' will appear at the top and when you click on it, a configuration window will appear.  Put the work 'integrity' into the box labelled 'IMS Host'.
+First, we go to the ACE audit manager interface ( [http://localhost:8090/ace-am](http://localhost:8090/ace-am)  ).  Once there, click on the status link at the top and it will ask you to log in ( username:admin password:admin ).  A link called 'System Settings' will appear at the top and when you click on it, a configuration window will appear.  Put the word 'integrity' into the box labelled 'IMS Host'.
 
 Hit the submit link at the bottom.
 
