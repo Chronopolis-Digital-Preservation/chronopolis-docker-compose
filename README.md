@@ -161,6 +161,8 @@ cd
 
 The web page on the ingest web server should show a replication is in progress.  The ingest will go through several stages, about one every minute, until it reaches the state 'preserved'.
 
+If you want to watch what is going on, ssh into the chron-ingest and chron-replication containers and tail -f * in the /var/log/chronopolis directories.
+
 Once the collection is preserved, you have successfully created a chronopolis store.  You can also look at the ace interface and check that the collection has been audited.
 
 > Written with [StackEdit](https://stackedit.io/).
