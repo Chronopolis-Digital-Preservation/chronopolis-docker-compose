@@ -51,7 +51,7 @@ The build environment includes a pgadmin container that you can use to examine t
 
 Finally, we exit out of the build environment, shut it down, and then bring up chronopolis.
 
-**Note: If you are building a replication node only, issue a 'docker-compose up' command in the node directory rather than the chronup statement below.**
+**[Note: If you are building a replication node only, issue a 'sudo ./nodeup.sh' command in the node directory rather than the chronup statement below.**
 ```
 exit
 exit
