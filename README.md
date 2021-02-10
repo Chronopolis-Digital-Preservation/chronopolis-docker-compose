@@ -27,6 +27,7 @@ The build scripts are meant to work with bash, so if you are on a Mac ( which is
 bash
 ```
 Then build the docker images we need and start up the build environment.
+[note: If you are building a replication node only using the docker compose in the node sub-directory, you should make the changes documented in that readme BEFORE you perform the build.]
 ```
 cd chronopolis-core/chronopolis-docker-compose/build
 ./buildenv.sh
