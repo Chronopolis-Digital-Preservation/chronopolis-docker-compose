@@ -1,0 +1,60 @@
+version: '3'
+services:
+  audit:
+    image: 'uazlibraries/ace-audit-manager:1.12'
+    restart: always
+    tty: true
+    links:
+      - dbstore
+    ports:
+      - "8090:8080"
+    environment:
+      - DB_DATABASE=${ACE_AM_DATABASE:-aceamdb}
+      - DB_HOST=${ACE_AMDB_HOST:-dbstore}
+      - DB_PORT=${ACE_AMDB_PORT:-3306}
+      - DB_USER=${ACE_AMDBA_USER:-aceam}
+      - DB_PASSWORD=${ACE_AMDBA_PASSWORD:-ace}
+      - BOOTSTRAP_SLEEP=${ACE_AM_BOOTSTRAP_SLEEP:-60}
+      - TZ=America/Los_Angeles
+    volumes:
+      - "../scratch1/chronopolis-preservation:/scratch1/chronopolis-preservation"
+      - ${ACE_AUDIT_SHARES:-./mnt}:/mnt
+      - run.mysql:/run/mysqld
+
+  dbstore:
+    image: 'uazlibraries/ace-dbstore-mysql:1.12'
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ADMIN_PSWD:-insecure}
+      - MYSQL_ALLOW_EMPTY_PASSWORD='false'
+      - ACE1_AM_DATABASE=${ACE1_AM_DATABASE:-aceamdb}
+      - ACE1_AMDBA_USER=${ACE1_AMDBA_USER:-aceam}
+      - ACE1_AMDBA_PASSWORD=${ACE1_AMDBA_PASSWORD:-ace}
+      - ACE_IMS_DATABASE=${ACE_IMS_DATABASE:-imsdb}
+      - ACE_IMSDBA_USER=${ACE_IMSDBA_USER:-aceims}
+      - ACE_IMSDBA_PASSWORD=${ACE_IMSDBA_PASSWORD:-ace}
+      - TZ=America/Los_Angeles
+    volumes:
+      - ${ACE_DBSTORE:-dbstore}:/var/lib/mysql
+      - run.mysql:/run/mysqld
+  
+  # These are built and stored locally.
+  chron-replication:
+    image: 'local/chron-replication:latest'
+    hostname: chron
+    restart: always
+    environment:
+      - JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+      - TZ=America/Los_Angeles
+    volumes:
+      - "../scratch1/chronopolis-preservation:/scratch1/chronopolis-preservation"
+      - "../export:/export"
+      - "../../:/chronopolis-core"
+      - "../chron-replication/files/replication:/usr/local/chronopolis/replication"
+      - "../chronopolishome:/home/chronopolis"
+
+volumes:
+  run.mysql:
+  dbstore:
