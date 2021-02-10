@@ -28,7 +28,7 @@ bash
 ```
 Then build the docker images we need and start up the build environment.
 
-[note: If you are building a replication node only using the docker compose in the node sub-directory, you should make the changes documented in that readme BEFORE you perform the build.]
+**[note: If you are building a replication node only using the docker compose in the node sub-directory, you should make the changes documented in that readme BEFORE you perform the build.]**
 ```
 cd chronopolis-core/chronopolis-docker-compose/build
 ./buildenv.sh
@@ -50,6 +50,8 @@ cd ingest-rest
 The build environment includes a pgadmin container that you can use to examine the postgresql db running on the postgresql container.  The URL is http://localhost:8060.  The username is chronopolis@localhost.localdomain and the password is 'password'.  I know, I know.  Once on the pgadmin interface, you can add a server pointing to host 'postgresql' with user 'postgres' and password...yes...you guessed it...'password'.
 
 Finally, we exit out of the build environment, shut it down, and then bring up chronopolis.
+
+**Note: If you are building a replication node only, issue a 'docker-compose up' command in the node directory rather than the chronup statement below.**
 ```
 exit
 exit
