@@ -77,6 +77,8 @@ Hit the submit link at the bottom.
 
 The configuration and mysql data for ACE is stored in a persistent volume associated with the container group the docker compose creates and will survive stopping and starting of containers within the environment during development.  If you prune or remove these volumes, the token, audit, and configuration will need to be recreated.
 
+**[note] If you are building a node only from the node sub-directory, you can stop here and simply add it to your current ingest server.**
+
 ## Chronopolis
 
 The ingest server webUI is at: [http://localhost:8070/](http://localhost:8070/)  The login button is at the top right.
