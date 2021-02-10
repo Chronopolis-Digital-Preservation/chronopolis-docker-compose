@@ -12,7 +12,7 @@ The script brings up an audit manager for the node, but that audit manager needs
 
 ### The replication rsync goes against an external ingest server
 
-Normally, the key materials and account setup for the rsync process that copies data from the ingest server to replication nodes is configured automatically in docker-compose.  For a replication node spin up, the ssh keys in the chronopolis home directory ( sourced from Chronopolis/chronopolis-core/chronopolis-docker-compose/chronopolishome/.ssh ) need to be regenerated and put into the authorized keys for the chronopolis account on the ingest server.  In addition, the host key for the ingest server needs to be added to authorized host file for the chronopolis user on the node.
+Normally, the key materials and account setup for the rsync process that copies data from the ingest server to replication nodes is configured automatically in docker-compose.  For a replication node spin up, the ssh keys in the chronopolis home directory ( sourced from Chronopolis/chronopolis-core/chronopolis-docker-compose/chronopolishome/.ssh ) need to be regenerated and put into the authorized keys for the chronopolis account on the external ingest server.  In addition, the host key for the ingest server needs to be added to authorized host file for the chronopolis user on the node.
 
-After the changes mentioned above are made made, then follow the build instructions as usual through to the ACE configuration step and you should have an operating replication node.
+After the changes mentioned above are made made, then follow the build instructions as usual through to the ACE configuration step and you should have an operating replication node with just a ./nodeup.sh command in this directory.
 
