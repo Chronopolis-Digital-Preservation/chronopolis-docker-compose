@@ -12,11 +12,11 @@ Since the chronopolis system has a large number of dependencies, this process wa
 
 First we grab the chronopolis-core source from gitlab.
 ```
-git clone https://gitlab.com/chronopolis/chronopolis-core.git
+git clone https://github.com/Chronopolis-Digital-Preservation/chronopolis-core.git
 ```
 Then we get the chronopolis-docker-compose source.
 ```
-git clone https://gitlab.com/chronopolis/chronopolis-docker-compose.git
+git clone https://github.com/Chronopolis-Digital-Preservation/chronopolis-docker-compose.git
 ```
 Now, we copy the chronopolis-docker-compose directory into the chronopolis-core directory.
 ```
