@@ -49,7 +49,7 @@ services:
       - run.mysql:/run/mysqld
       
   dbstore:
-    image: 'uazlibraries/ace-dbstore-mysql:1.12'
+    image: 'ghcr.io/chronopolis-digital-preservation/ace-dbstore-mysql:latest'
     restart: always
     ports:
       - "3306:3306"
