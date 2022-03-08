@@ -1,7 +1,7 @@
 version: '3'
 services:
   audit:
-    image: 'uazlibraries/ace-audit-manager:1.12'
+    image: 'ghcr.io/chronopolis-digital-preservation/ace-audit-manager:latest'
     restart: always
     tty: true
     links:
