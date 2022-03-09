@@ -117,7 +117,6 @@ services:
       - POSTGRES_PASSWORD=password
       - TZ=America/Los_Angeles
     volumes:
-#      - "./postgresql/data:/var/lib/postgresql/data"
       - postgresdata:/var/lib/postgresql/data
 
 volumes:
