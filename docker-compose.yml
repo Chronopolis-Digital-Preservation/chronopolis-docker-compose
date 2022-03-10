@@ -23,7 +23,7 @@ services:
       - run.mysql:/run/mysqld
 
   integrity:
-    image: 'uazlibraries/ace-integrity-management:1.12'
+    image: 'ghcr.io/chronopolis-digital-preservation/ace-integrity-management:latest'
     restart: always
     tty: true
     links:
