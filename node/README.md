@@ -8,7 +8,7 @@ The key differences between this and a full chronopolis stack are:
 This installation brings up only a replication container, which needs to be configured to run against an external ingest server in order to copy data.  This entails changing settings in the replication application.yaml file ( chronopolis-core/chronopolis-docker-compose/chro  
 n-replication/files/replication ) so that it points to that external ingest server and has a username and password in it which matches a node user in that system.  You will NOT need to follow any of the directions for setting up the ingest server.  However, you WILL need to add the user mentioned above as a replication target to any ingest sources you want copied to it.
 
-The script brings up an audit manager for the node, but that audit manager needs to be configured to go against an external ACE IMS server.  In the spin up directions for the ACE server, instead of putting the word 'integrity' into the box labelled 'IMS Host', you would put the host name of the external IMS host.
+The script brings up an audit manager for the node, but that audit manager needs to be configured to go against an external ACE IMS server.  In the spin up directions for the ACE server, instead of putting the word 'integrity' into the box labelled 'IMS Host', you would put the host name of the external IMS host.  You will also need to check the 'IMS Port' setting to make sure it is correct ( usually 8080 ).
 
 ### The replication rsync goes against an external ingest server
 
