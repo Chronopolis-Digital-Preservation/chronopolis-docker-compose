@@ -4,7 +4,7 @@ The docker compose in this directory will bring up just the parts of the chronop
 
 The key differences between this and a full chronopolis stack are:
 
-### There are no ingest or ACE servers
+### There are no ingest or ACE IMS servers
 This installation brings up only a replication container, which needs to be configured to run against an external ingest server in order to copy data.  This entails changing settings in the replication application.yaml file ( chronopolis-core/chronopolis-docker-compose/chro  
 n-replication/files/replication ) so that it points to that external ingest server and has a username and password in it which matches a node user in that system.  You will NOT need to follow any of the directions for setting up the ingest server.  However, you WILL need to add the user mentioned above as a replication target to any ingest sources you want copied to it.
 
