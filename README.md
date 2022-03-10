@@ -57,7 +57,7 @@ exit
 exit
 sudo ./builddown.sh
 cd ..
-./chronup.sh
+sudo ./chronup.sh
 ```
 
 Your infrastructure should be up and running about 3 minutes after the chronup.sh is run.
