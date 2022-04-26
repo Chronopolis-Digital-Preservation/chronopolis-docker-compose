@@ -2,7 +2,7 @@
 
 To enable better development and broader environment, we need a self-contained docker environment for developers.
 
-The ACE components used in this build are available and documented here:
+The ACE components used in this build are forked from and documented here:
 
 [https://github.com/ualibraries/ace-dbstore-mysql](https://github.com/ualibraries/ace-dbstore-mysql)
 
