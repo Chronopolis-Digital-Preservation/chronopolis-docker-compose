@@ -10,4 +10,7 @@ RUN yum -y install maven
 # We also need rsync
 RUN yum -y install rsync
 
+# And...the which command...for some reason...
+RUN yum -y install which
+
 ENTRYPOINT ["/home/chronopolis/chronopolisbuild.sh"]
