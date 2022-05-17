@@ -1,0 +1,48 @@
+version: '3'
+services:
+  dbstore:
+    image: 'uazlibraries/ace-dbstore-mysql:1.12'
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ADMIN_PSWD:-insecure}
+      - MYSQL_ALLOW_EMPTY_PASSWORD='false'
+      - ACE1_AM_DATABASE=${ACE1_AM_DATABASE:-amdb1}
+      - ACE1_AMDBA_USER=${ACE1_AMDBA_USER:-aceam1}
+      - ACE1_AMDBA_PASSWORD=${ACE1_AMDBA_PASSWORD:-ace}
+      - ACE2_AM_DATABASE=${ACE2_AM_DATABASE:-""}
+      - ACE2_AMDBA_USER=${ACE2_AMDBA_USER:-""}
+      - ACE2_AMDBA_PASSWORD=${ACE2_AMDBA_PASSWORD:-""}
+      - ACE3_AM_DATABASE=${ACE3_AM_DATABASE:-""}
+      - ACE3_AMDBA_USER=${ACE3_AMDBA_USER:-""}
+      - ACE3_AMDBA_PASSWORD=${ACE3_AMDBA_PASSWORD:-""}
+      - ACE4_AM_DATABASE=${ACE4_AM_DATABASE:-""}
+      - ACE4_AMDBA_USER=${ACE4_AMDBA_USER:-""}
+      - ACE4_AMDBA_PASSWORD=${ACE4_AMDBA_PASSWORD:-""}
+      - ACE5_AM_DATABASE=${ACE5_AM_DATABASE:-""}
+      - ACE5_AMDBA_USER=${ACE5_AMDBA_USER:-""}
+      - ACE5_AMDBA_PASSWORD=${ACE5_AMDBA_PASSWORD:-""}
+      - ACE6_AM_DATABASE=${ACE6_AM_DATABASE:-""}
+      - ACE6_AMDBA_USER=${ACE6_AMDBA_USER:-""}
+      - ACE6_AMDBA_PASSWORD=${ACE6_AMDBA_PASSWORD:-""}
+      - ACE7_AM_DATABASE=${ACE7_AM_DATABASE:-""}
+      - ACE7_AMDBA_USER=${ACE7_AMDBA_USER:-""}
+      - ACE7_AMDBA_PASSWORD=${ACE7_AMDBA_PASSWORD:-""}
+      - ACE8_AM_DATABASE=${ACE8_AM_DATABASE:-""}
+      - ACE8_AMDBA_USER=${ACE8_AMDBA_USER:-""}
+      - ACE8_AMDBA_PASSWORD=${ACE8_AMDBA_PASSWORD:-""}
+      - ACE9_AM_DATABASE=${ACE9_AM_DATABASE:-""}
+      - ACE9_AMDBA_USER=${ACE9_AMDBA_USER:-""}
+      - ACE9_AMDBA_PASSWORD=${ACE9_AMDBA_PASSWORD:-""}
+      - ACE_IMS_DATABASE=${ACE_IMS_DATABASE:-imsdb}
+      - ACE_IMSDBA_USER=${ACE_IMSDBA_USER:-aceims}
+      - ACE_IMSDBA_PASSWORD=${ACE_IMSDBA_PASSWORD:-ace}
+    volumes:
+      - ${ACE_DBSTORE:-dbstore}:/var/lib/mysql
+      - run.mysql:/run/mysqld
+
+volumes:
+  run.mysql:
+  dbstore:
+    
