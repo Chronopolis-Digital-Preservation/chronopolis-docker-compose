@@ -1,16 +1,11 @@
-FROM --platform=linux/amd64 centos:7
+FROM --platform=linux/amd64 ubuntu:latest
 
 RUN adduser chronopolis
 
-RUN yum -y install java-1.8.0-openjdk-devel
+RUN apt update
+RUN apt install -y openjdk-8-jdk
 
 # We are going to need Maven
-RUN yum -y install maven
-
-# We also need rsync
-RUN yum -y install rsync
-
-# And...the which command...for some reason...
-RUN yum -y install which
+RUN apt install -y maven
 
 ENTRYPOINT ["/home/chronopolis/chronopolisbuild.sh"]
