@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/ace-am-1.8">
+  <Logger className="org.apache.catalina.logger.FileLogger" prefix="aceam." suffix=".log" timestamp="true"/>
+  <!-- Configuration for authentication. This information should not need to be
+  changed at all unless you have your own authentication provider-->
+  <Realm className="org.apache.catalina.realm.DataSourceRealm" dataSourceName="jdbc/aceamdb" localDataSource="true" roleNameCol="rolename" userCredCol="password" userNameCol="username" userRoleTable="userroles" userTable="users"/>
+  <!-- If you are using a locally installed Mysql server, you only need to change
+       the password entry at the end, otherwise you may need to look at the url
+       or the username.
+
+       url - machine name and database name
+         - in the form jdbc:mysql://<YOUR_DB_SERVER>/<ACE_DB>
+       username - username used to connect to database
+       password - password used for database
+
+       'name' is the resource name used by the web app to refer to this
+       database and NOT the database name, do not change unless you want bad
+       things to happen.-->
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="jdbc/aceamdb" password="ace" testOnBorrow="true" type="javax.sql.DataSource" url="jdbc:mysql://localhost/aceam?characterEncoding=UTF-8" username="aceam" validationQuery="SELECT 1"/>
+</Context>

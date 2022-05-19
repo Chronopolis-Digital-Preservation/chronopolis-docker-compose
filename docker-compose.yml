@@ -80,7 +80,7 @@ services:
     volumes:
       - "./scratch1/chronopolis-preservation:/scratch1/chronopolis-preservation"
       - "./export:/export"
-      - "../:/chronopolis-core"
+      - "../chronopolis-core:/chronopolis-core"
       - "./chron-replication/files/replication:/usr/local/chronopolis/replication"
       - "./chronopolishome:/home/chronopolis"
 
@@ -102,7 +102,7 @@ services:
     volumes:
       - "./scratch1/chronopolis-preservation:/scratch1/chronopolis-preservation"
       - "./export:/export"
-      - "../:/chronopolis-core"
+      - "../chronopolis-core:/chronopolis-core"
       - "./chron-ingest/files/ingest:/usr/local/chronopolis/ingest"
       - "./chronopolishome:/home/chronopolis"
 

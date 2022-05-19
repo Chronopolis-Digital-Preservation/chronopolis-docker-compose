@@ -12,7 +12,7 @@ services:
     depends_on:
       - postgresql
     volumes:
-      - "../..:/chronopolis-core"
+      - "../../chronopolis-core:/chronopolis-core"
       - "../chronopolishome:/home/chronopolis"
       - "../export:/export"
 
