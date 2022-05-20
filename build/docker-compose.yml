@@ -13,6 +13,7 @@ services:
       - postgresql
     volumes:
       - "../../chronopolis-core:/chronopolis-core"
+      - "../../audit-control-environment:/audit-control-environment"
       - "../chronopolishome:/home/chronopolis"
       - "../export:/export"
 
