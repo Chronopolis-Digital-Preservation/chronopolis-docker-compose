@@ -1,11 +1,11 @@
-FROM --platform=linux/amd64 ubuntu:latest
+FROM --platform=linux/amd64 centos7
 
 RUN adduser chronopolis
 
-RUN apt update
-RUN apt install -y openjdk-8-jdk
+RUN yum -y update
+RUN yum install -y java-1.8.0-openjdk
 
 # We are going to need Maven
-RUN apt install -y maven
+RUN yum install -y maven
 
 ENTRYPOINT ["/home/chronopolis/chronopolisbuild.sh"]
