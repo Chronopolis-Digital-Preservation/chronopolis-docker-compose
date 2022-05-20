@@ -7,3 +7,9 @@ cd ../chron-ingest
 ./build.sh
 cd ../chron-replication
 ./build.sh
+cd ../ace-am
+./build.sh
+cd ../ace-dbstore
+./build.sh
+cd ../ace-ims
+./build.sh
