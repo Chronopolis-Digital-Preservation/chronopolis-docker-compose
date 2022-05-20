@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 centos7
+FROM --platform=linux/amd64 centos:7
 
 RUN adduser chronopolis
 
