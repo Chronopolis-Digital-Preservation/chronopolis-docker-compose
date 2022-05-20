@@ -12,7 +12,7 @@ CREATE TABLE `collection` (
   `STATE` char(1) default NULL,
   `DIGESTALGORITHM` varchar(20) NOT NULL default 'SHA-256',
   PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `monitored_item` (
@@ -35,7 +35,7 @@ CREATE TABLE `monitored_item` (
   KEY `FK_monitored_item_PARENTCOLLECTION_ID` (`PARENTCOLLECTION_ID`),
   KEY `FK_monitored_item_TOKEN_ID` (`TOKEN_ID`),
   KEY `idx_monitored_item_digest` (`FILEDIGEST`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 MAX_ROWS=2431504384;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 MAX_ROWS=2431504384;
 
 
 CREATE TABLE `acetoken` (
@@ -50,7 +50,7 @@ CREATE TABLE `acetoken` (
   `PARENTCOLLECTION_ID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`),
   KEY `FK_acetoken_PARENTCOLLECTION_ID` (`PARENTCOLLECTION_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 MAX_ROWS=2431504384;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 MAX_ROWS=2431504384;
 
 
 CREATE TABLE `logevent` (
@@ -66,7 +66,7 @@ CREATE TABLE `logevent` (
   KEY `logevent_session_idx` (`SESSION`),
   KEY `logevent_type_idx` (`LOGTYPE`),
   KEY `FK_logevent_COLLECTION_ID` (`COLLECTION_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 MAX_ROWS=2431504384;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 MAX_ROWS=2431504384;
 
 
 CREATE TABLE `benchmarksettings` (
@@ -80,7 +80,7 @@ CREATE TABLE `benchmarksettings` (
   `COLLECTION_ID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`),
   KEY `FK_benchmarksettings_COLLECTION_ID` (`COLLECTION_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `srbsettings` (
@@ -94,7 +94,7 @@ CREATE TABLE `srbsettings` (
   `COLLECTION_ID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`),
   KEY `FK_srbsettings_COLLECTION_ID` (`COLLECTION_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `swapsettings` (
@@ -107,7 +107,7 @@ CREATE TABLE `swapsettings` (
   `COLLECTION_ID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`),
   KEY `FK_srbsettings_COLLECTION_ID` (`COLLECTION_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `irodssettings` (
@@ -120,7 +120,7 @@ CREATE TABLE `irodssettings` (
   `COLLECTION_ID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`),
   KEY `FK_irodssettings_COLLECTION_ID` (`COLLECTION_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `userroles` (
@@ -128,7 +128,7 @@ CREATE TABLE `userroles` (
   `USERNAME` varchar(255) default NULL,
   `ROLENAME` varchar(255) default NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `settings` (
@@ -138,7 +138,7 @@ CREATE TABLE `settings` (
   `COLLECTION_ID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`),
   UNIQUE idx_coll_setting (`COLLECTION_ID`,`ATTR`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `users` (
@@ -146,7 +146,7 @@ CREATE TABLE `users` (
   `USERNAME` varchar(255) default NULL,
   `PASSWORD` varchar(255) default NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `filter_entry` (
@@ -156,7 +156,7 @@ CREATE TABLE `filter_entry` (
   `COLLECTION_ID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`),
   KEY `FK_filter_entry_COLLECTION_ID` (`COLLECTION_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `partner_site` (
@@ -165,7 +165,7 @@ CREATE TABLE `partner_site` (
   `USER` varchar(255) default NULL,
   `PASS` varchar(255) default NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `report_item` (
@@ -176,7 +176,7 @@ CREATE TABLE `report_item` (
   `REPORT_ID` bigint(20) default NULL,
   PRIMARY KEY  (`ID`),
   KEY `idx_report_id` (`REPORT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `report_summary` (
@@ -190,7 +190,7 @@ CREATE TABLE `report_summary` (
   `COLLECTION_ID` bigint(20) default NULL,
   PRIMARY KEY  (`ID`),
   KEY `idx_summary_parent` (`COLLECTION_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `report_policy` (
   `ID` bigint(20) NOT NULL auto_increment,
@@ -199,7 +199,7 @@ CREATE TABLE `report_policy` (
   `NAME` varchar(255) default NULL,
   `COLLECTION_ID` bigint(20) default NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `peer_collection` (
@@ -208,7 +208,7 @@ CREATE TABLE `peer_collection` (
   `SITE_ID` bigint(20) NOT NULL,
   `PEERID` bigint(20) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `system_settings` (
   `ID` bigint(20) NOT NULL auto_increment,
@@ -217,4 +217,4 @@ CREATE TABLE `system_settings` (
   `CUSTOM` BOOLEAN default FALSE,
   PRIMARY KEY  (`ID`),
   UNIQUE (`ATTR`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
