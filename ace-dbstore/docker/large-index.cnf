@@ -1,4 +1,0 @@
-[mysqld]
-innodb_file_format = BARRACUDA
-innodb_large_prefix = ON
-innodb_lock_wait_timeout = 500

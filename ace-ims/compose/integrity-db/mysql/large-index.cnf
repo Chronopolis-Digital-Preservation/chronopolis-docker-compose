@@ -1,3 +1,0 @@
-[mysqld]
-innodb_file_format = BARRACUDA
-innodb_large_prefix = ON
