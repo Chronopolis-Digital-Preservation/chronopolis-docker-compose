@@ -1,7 +1,7 @@
 version: '3'
 services:
   audit:
-    image: 'local/ace-am:latest'
+    image: 'docker pull ghcr.io/chronopolis-digital-preservation/ace-audit-manager:latest'
     restart: always
     tty: true
     links:
@@ -23,7 +23,7 @@ services:
       - run.mysql:/run/mysqld
 
   integrity:
-    image: 'local/ace-ims:latest'
+    image: 'uazlibraries/ace-integrity-management'
     restart: always
     tty: true
     links:
@@ -49,7 +49,7 @@ services:
       - run.mysql:/run/mysqld
       
   dbstore:
-    image: 'local/ace-dbstore:latest'
+    image: 'uazlibraries/ace-dbstore-mysql'
     restart: always
     ports:
       - "3306:3306"
