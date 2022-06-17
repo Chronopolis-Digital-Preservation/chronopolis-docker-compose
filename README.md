@@ -18,10 +18,6 @@ Then we get the chronopolis-docker-compose source.
 ```
 git clone https://github.com/Chronopolis-Digital-Preservation/chronopolis-docker-compose.git
 ```
-Now, we copy the chronopolis-docker-compose directory into the chronopolis-core directory.
-```
-mv chronopolis-docker-compose chronopolis-core
-```
 The build scripts are meant to work with bash, so if you are on a Mac ( which is now zsh ), or aren't sure, run the shell with this command.
 ```
 bash
@@ -30,7 +26,7 @@ Then build the docker images we need and start up the build environment.
 
 **[note: If you are building a replication node only using the docker compose in the node sub-directory, you should make the changes documented in that readme BEFORE you perform the build.]**
 ```
-cd chronopolis-core/chronopolis-docker-compose/build
+cd chronopolis-docker-compose/build
 ./buildenv.sh
 sudo ./buildimages.sh
 sudo ./buildup.sh
