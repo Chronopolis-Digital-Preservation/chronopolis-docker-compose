@@ -2,6 +2,4 @@ You will need to put a copy of the latest ace-dist in the directory and ensure t
 
 This build is based on:
 
-https://hub.docker.com/r/uazlibraries/ace-audit-manager
-
 https://github.com/ualibraries/ace-audit-manager
