@@ -38,7 +38,7 @@ su - chronopolis
 cd /chronopolis-core
 ./mvnw clean install
 ```
-Once all that compiling is done and the build test have passed, initialize the postgresql db with the tables we will need...
+Once all that compiling is done and the build tests have passed, initialize the postgresql db with the tables we will need...
 ```
 cd ingest-rest
 ../mvnw -Dflyway.user=postgres -Dflyway.password=password -Dflyway.url=jdbc:postgresql://postgresql:5432/ingestdb flyway:migrate
