@@ -27,8 +27,7 @@ services:
       - POSTGRES_PASSWORD=password
       - TZ=America/Los_Angeles
     volumes:
-#      - "../postgresql/data:/var/lib/postgresql/data"
-      - "postgresdata:/var/lib/postgresql/data"
+      - "../postgresql/data:/var/lib/postgresql/data"
       - "../postgresql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
 
   pgadmin:
@@ -40,6 +39,3 @@ services:
     environment: 
       - PGADMIN_DEFAULT_EMAIL=chronopolis@localhost.localdomain
       - PGADMIN_DEFAULT_PASSWORD=password
-
-volumes:
-  postgresdata:
