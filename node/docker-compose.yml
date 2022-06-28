@@ -37,7 +37,7 @@ services:
       - ACE_IMSDBA_PASSWORD=${ACE_IMSDBA_PASSWORD:-ace}
       - TZ=America/Los_Angeles
     volumes:
-      - ${ACE_DBSTORE:-dbstore}:/var/lib/mysql
+      - ../mysql/data:/var/lib/mysql
       - run.mysql:/run/mysqld
   
   # These are built and stored locally.
@@ -57,4 +57,3 @@ services:
 
 volumes:
   run.mysql:
-  dbstore:
