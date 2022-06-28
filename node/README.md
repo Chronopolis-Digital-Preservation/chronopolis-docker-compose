@@ -1,6 +1,6 @@
 # Running a replication node
 
-The docker compose in this directory will bring up just the parts of the chronopolis system needed to add an addition replication node to an existing chronopolis installation.
+The docker compose in this directory will bring up just the parts of the chronopolis system needed to add an additional replication node to an existing chronopolis installation.
 
 The key differences between this and a full chronopolis stack are:
 
