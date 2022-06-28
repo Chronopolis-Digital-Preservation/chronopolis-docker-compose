@@ -1,7 +1,7 @@
 version: '3'
 services:
   audit:
-    image: 'ghcr.io/chronopolis-digital-preservation/ace-audit-manager:latest'
+    image: 'ghcr.io/chronopolis-digital-preservation/ace-audit-manager:1.15.0'
     restart: always
     tty: true
     links:
@@ -64,7 +64,7 @@ services:
       - ACE_IMSDBA_PASSWORD=${ACE_IMSDBA_PASSWORD:-ace}
       - TZ=America/Los_Angeles
     volumes:
-      - ${ACE_DBSTORE:-dbstore}:/var/lib/mysql
+      - ./mysql/data:/var/lib/mysql
       - run.mysql:/run/mysqld
   
   # These are built and stored locally.
@@ -117,9 +117,7 @@ services:
       - POSTGRES_PASSWORD=password
       - TZ=America/Los_Angeles
     volumes:
-      - postgresdata:/var/lib/postgresql/data
+      - ./postgresql/data:/var/lib/postgresql/data
 
 volumes:
   run.mysql:
-  dbstore:
-  postgresdata:
