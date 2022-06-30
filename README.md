@@ -148,7 +148,7 @@ Run the ingest.sh command in  and you will be on the ingest server ( chron-inges
 First we need to make something to ingest...
 
 ```jsx
-./ingestssh.sh
+sudo ./ingestssh.sh
 su - chronopolis
 cd /export/outgoing/bags
 mkdir development
