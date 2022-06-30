@@ -9,7 +9,7 @@ chmod 700 /home/chronopolis/.ssh/id_rsa
 
 su - chronopolis <<ENDOFSU
 cd /usr/local/chronopolis/replication
-/usr/bin/java -Dspring.config.location=file:/usr/local/chronopolis/replication/application.yml -jar /chronopolis-core/replication-shell/target/replication-shell-3.3.0-SNAPSHOT.jar
+/usr/bin/java -Dspring.config.location=file:/usr/local/chronopolis/replication/application.yml -jar /chronopolis-core/replication-shell/target/replication-shell-3.4.0-SNAPSHOT.jar
 ENDOFSU
 
 while true; do
