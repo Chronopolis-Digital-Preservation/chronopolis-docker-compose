@@ -38,7 +38,7 @@ su - chronopolis
 cd /chronopolis-core
 ./mvnw clean install
 ```
-Once all that compiling is done and the build tests have passed, initialize the postgresql db with the tables we will need...
+Once all that compiling is done and the build tests have passed initialize, the postgresql db with the tables we will need...
 ```
 cd ingest-rest
 ../mvnw -Dflyway.user=postgres -Dflyway.password=password -Dflyway.url=jdbc:postgresql://postgresql:5432/ingestdb flyway:migrate
@@ -69,7 +69,7 @@ First, we go to the ACE audit manager interface ( [http://localhost:8090/ace-am]
 ```
 Once there, click on the status link at the top and it will ask you to log in ( username:admin password:admin ).  A link called 'System Settings' will appear at the top and when you click on it, a configuration window will appear.
 
-**Put the word 'integrity' into the box labelled 'IMS Host'.  You also need to change 'IMS Port from '80' to '8080'.**
+**Click the IMS tab and put the word 'integrity' into the box labelled 'IMS Host'.  You also need to change 'IMS Port from '80' to '8080'.**
 
 Hit the submit link at the bottom.
 
