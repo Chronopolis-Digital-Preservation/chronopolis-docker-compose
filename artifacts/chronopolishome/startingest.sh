@@ -6,7 +6,7 @@ chown -R chronopolis:chronopolis /export
 
 su chronopolis <<ENDOFSU
 cd /usr/local/chronopolis/ingest
-/usr/bin/java -Dspring.config.location=file:/usr/local/chronopolis/ingest/application.yml -jar /chronopolis-core/ingest-rest/target/ingest-rest-3.3.0-SNAPSHOT.jar
+/usr/bin/java -Dspring.config.location=file:/usr/local/chronopolis/ingest/application.yml -jar /chronopolis-core/ingest-rest/target/ingest-rest-3.4.0-SNAPSHOT.jar
 ENDOFSU
 
 while true; do
